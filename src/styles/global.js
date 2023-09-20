@@ -13,7 +13,7 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.COLORS.WHITE} ;
     }
 
-    body, input, buttton, textarea {
+    body, input, button, textarea {
         font-family: "Roboto Slab", sans-serif;
         font-size: 16px;
         outline: none;
