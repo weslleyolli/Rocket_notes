@@ -1,9 +1,16 @@
-import { Container } from "./styles";
+import { Container, Profile } from "./styles";
 
 export function Header() {
     return (
         <Container >
-            HEADER
+            <Profile>
+                <img src="https://github.com/weslleyolli.png" alt="user Photo" />
+
+                <div>
+                    <span>Welcome</span>
+                    <strong> Weslley Oliveira</strong>
+                </div>
+            </Profile>
         </Container>
     )
 }
