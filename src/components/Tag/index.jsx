@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container } from "./styles";
 
 export function Tag({ title }) {
@@ -7,3 +8,7 @@ export function Tag({ title }) {
         </Container>
     )
 }
+
+Tag.propTypes = {
+    title: PropTypes.string,
+};

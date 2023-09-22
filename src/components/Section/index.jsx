@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container } from './styles'
 
 export function Section({ title, children}) {
@@ -8,3 +9,8 @@ export function Section({ title, children}) {
         </Container>
     )
 }
+
+Section.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.string
+};
