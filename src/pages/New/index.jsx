@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
 import { Textarea } from '../../components/Textarea'
@@ -20,13 +21,22 @@ export function New() {
                         <a href="#">back</a>
                     </header>
 
-                    <Input placeholder="Title"/>
+                    <Input placeholder="Title" />
                     <Textarea placeholder="Comments" />
 
                     <Section title="Links">
-                        <NoteItem value="https://google.com.br"/>
-                        <NoteItem isNew placeholder="New link"/>
+                        <NoteItem value="https://google.com.br" />
+                        <NoteItem isNew placeholder="New link" />
                     </Section>
+
+                    <Section title="markers">
+                        <div className='tags'>
+                            <NoteItem value="React"/>
+                            <NoteItem isNew placeholder="New tag"/>
+                        </div>
+                    </Section>
+
+                    <Button title='Save' />
                 </Form>
             </main>
         </Container>
