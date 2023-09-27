@@ -1,11 +1,33 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState} from "react";
+
+import { api } from "../services/api";
 
 export const AuthContext = createContext({})
 
 // eslint-disable-next-line react/prop-types
 function AuthProvider({ children }) {
+    const [data, setData] = useState({})
+
+    async function signIn({ email, password }) {
+
+        try {
+            const response = await api.post("/sessions", { email, password });
+            const { user, token } = response.data;
+            
+            api.defaults.headers.authorization = `Bearer ${token}`
+            setData({ user, token })
+
+        } catch (error) {
+            if (error.response) {
+                alert(error.response.data.message)
+            } else {
+                alert("Not was possible to sign in")
+            }
+        }
+
+    }
     return (
-        <AuthContext.Provider value={{ email: "wendell@email.com", name: "wendell"}}>
+        <AuthContext.Provider value={{ signIn, user: data.user }}>
             {children}
         </AuthContext.Provider>
     )
