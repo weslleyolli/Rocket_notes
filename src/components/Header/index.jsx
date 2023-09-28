@@ -3,6 +3,8 @@ import { useAuth} from "../../hooks/auth"
 import { Container, Profile, Logout } from "./styles";
 import { api } from "../../services/api"
 
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+
 
 export function Header() {
     const { signOut, user  } = useAuth();
