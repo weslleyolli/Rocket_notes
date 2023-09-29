@@ -44,6 +44,17 @@ export function New() {
     }
 
     async function handleNewNote() {
+        if(!title) {
+            return alert("Enter a title of note")
+        }
+
+        if(newLink) {
+            return alert("you left a Link in the field to add, but didn't add it")
+        }
+        if(newTag) {
+            return alert("you left a tag in the field to add, but didn't add it")
+        }
+
         await api.post('/notes', {
             title,
             description,
