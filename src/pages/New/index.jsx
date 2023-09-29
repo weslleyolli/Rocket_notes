@@ -63,7 +63,7 @@ export function New() {
         })
 
         alert("Note Created")
-        navigate("/")
+        navigate(-1)
     }
     return (
         <Container>
