@@ -11,20 +11,22 @@ import { ButtonText } from "../../components/ButtonText"
 import { api } from "../../services/api";
 
 export function Home() {
+    const [search, setSearch] = useState("")
     const [tags, setTags] = useState([])
     const [tagsSelected, setTagsSelected] = useState([])
+    const [notes, setNotes] = useState([])
 
     function handleTagSelected(tagName) {
         const alreadySelected = tagsSelected.includes(tagName)
 
-        if(alreadySelected) {
-            const filterTags  = tagsSelected.filter(tag => tag !== tagName)
+        if (alreadySelected) {
+            const filterTags = tagsSelected.filter(tag => tag !== tagName)
             setTagsSelected(filterTags)
-        }else {
+        } else {
             setTagsSelected(prevState => [...prevState, tagName])
         }
 
-        
+
     }
 
     useEffect(() => {
@@ -34,6 +36,15 @@ export function Home() {
         }
         fetchTags()
     }, [])
+
+    useEffect(() => {
+        async function fetchNotes() {
+            const response = await api.get(`/notes?title=${search}&tags=${tagsSelected}`)
+            setNotes(response.data)
+        }
+
+        fetchNotes()
+    }, [tagsSelected, search])
     return (
         <Container>
             <Brand>
@@ -44,16 +55,16 @@ export function Home() {
 
             <Menu>
                 <li>
-                    <ButtonText 
-                        title="Todos" 
+                    <ButtonText
+                        title="Todos"
                         onClick={() => handleTagSelected("all")}
-                        isActive={false} 
+                        isActive={false}
                     />
                 </li>
                 {
                     tags && tags.map(tag => (
                         <li key={String(tag.id)}>
-                            <ButtonText 
+                            <ButtonText
                                 title={tag.name}
                                 onClick={() => handleTagSelected(tag.name)}
                                 $isactive={tagsSelected.includes(tag.name)}
@@ -66,19 +77,23 @@ export function Home() {
             </Menu>
 
             <Search>
-                <Input placeholder="Search for title" icon={FiSearch} />
+                <Input
+                    placeholder="Search for title"
+                    icon={FiSearch}
+                    onChange={() => setSearch(e.target.value)}
+                />
             </Search>
 
             <Content>
                 <Section title="minhas notas">
-                    <Note data={{
-                        title: 'React',
-                        tags: [
-                            { id: '1', name: 'React' },
-                            { id: '2', name: 'Rocketseat' }
-                        ]
-                    }}
-                    />
+                    {
+                        notes.map(note => (
+                            <Note 
+                                key={String(note.id)}
+                                data={note}
+                            />
+                        ))
+                    }
                 </Section>
             </Content>
 
