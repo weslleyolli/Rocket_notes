@@ -39,7 +39,7 @@ export function SignUp() {
         <Container >
             <Background />
             <Form>
-                <h1>Rocket Notes</h1>
+                <h1>Notes</h1>
                 <p>Application for save and manage your links</p>
 
                 <h2>Create your account</h2>
