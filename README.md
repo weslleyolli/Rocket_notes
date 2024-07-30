@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/github/stars/weslleyolli/Rocket_notes?label=stars&message=MIT&color=white&labelColor=8257E5" alt="Stars">
 </p>
 <p align="center">
-    <img src="./RocketNotes.png" alt="Preview">
+    <img src="/RocketNotes.png" alt="Preview">
 </p>
 
 <br>
