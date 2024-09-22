@@ -21,7 +21,10 @@ export const Container = styled.div`
         flex-wrap: wrap;
     }
 
-`
+    @media (max-width: 768px) {
+        padding: 0 16px;
+    }
+`;
 
 export const Form = styled.form`
     max-width: 550px;
@@ -31,7 +34,6 @@ export const Form = styled.form`
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         margin-bottom: 36px;
 
         a {
@@ -39,4 +41,9 @@ export const Form = styled.form`
             color: ${({ theme }) => theme.COLORS.GRAY_100};
         }
     }
-`
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+`;
