@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
@@ -12,10 +12,11 @@ export const Container = styled.div`
 
     > main {
         grid-area: content;
-        overflow-y: scroll;
-        padding:  64px 0;
+        overflow-y: auto;
+        padding: 64px 0;
     }
-`
+`;
+
 
 export const Links = styled.ul`
     list-style: none;
@@ -25,9 +26,14 @@ export const Links = styled.ul`
     }
 
     a {
-        color: ${({ theme }) => theme.COLORS.WHITE} ;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
-`
+`;
 
 export const Content = styled.div`
     max-width: 550px;
@@ -37,18 +43,31 @@ export const Content = styled.div`
     flex-direction: column;
 
     > button:first-child {
-        align-self: end;
+        align-self: flex-end;
     }
 
     > h1 {
         font-size: 36px;
         font-weight: 500;
         padding-top: 64px;
+        color: ${({ theme }) => theme.COLORS.WHITE};
     }
 
     > p {
         font-size: 16px;
         margin-top: 16px;
         text-align: justify;
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
-`
+
+    @media (max-width: 768px) {
+        padding: 0 30px; 
+        > h1 {
+            font-size: 28px;
+        }
+
+        > p {
+            font-size: 14px; 
+        }
+    }
+`;

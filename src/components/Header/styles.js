@@ -16,6 +16,10 @@ export const Container = styled.header`
 
     padding: 0 80px;
 
+    @media (max-width: 768px) {
+        padding: 0 16px;
+    }
+
 `
 export const Profile = styled(Link)`
     display: flex;

@@ -19,6 +19,10 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.GRAY_100};
             font-size: 24px;
         }
+
+        @media (max-width: 768px) {
+            padding: 0 16px;
+        }
     }
 `
 export const Form = styled.form`
