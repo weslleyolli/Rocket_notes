@@ -7,7 +7,6 @@ export const Container = styled.div`
     display: flex;
     align-items: stretch;
 `
-
 export const Form = styled.form`
     padding: 0 8.5rem;
     display: flex;
@@ -53,7 +52,6 @@ export const Form = styled.form`
     }
 } 
 `;
-
 export const Background = styled.div`
     flex: 1;
     background: url(${backgroundImage}) no-repeat center center;

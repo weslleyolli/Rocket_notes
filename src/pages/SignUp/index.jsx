@@ -41,16 +41,13 @@ export function SignUp() {
             <Form>
                 <h1>Notes</h1>
                 <p>Application for save and manage your links</p>
-
                 <h2>Create your account</h2>
-
                 <Input
                     placeholder="Name"
                     type="text"
                     icon={FiUser}
                     onChange={e => setName(e.target.value)}
                 />
-
                 <Input
                     placeholder="Email"
                     type="text"
@@ -64,9 +61,7 @@ export function SignUp() {
                     onChange={e => setPassword(e.target.value)}
                     
                 />
-
                 <Button title="Register" onClick={handleSignUp} />
-
                 <Link to="/">
                     Return to login
                 </Link>

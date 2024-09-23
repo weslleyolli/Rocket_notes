@@ -7,11 +7,10 @@ export const Container = styled.div`
     align-items: stretch;
 
     @media (max-width: 768px) {
-        align-items: center;  // Centraliza verticalmente no mobile
-        justify-content: center;  // Centraliza horizontalmente no mobile
+        align-items: center;
+        justify-content: center; 
     }
 `;
-
 export const Form = styled.form`
     padding: 0 8.5rem;
     display: flex;
@@ -57,7 +56,6 @@ export const Form = styled.form`
     }
 } 
 `;
-
 export const Input = styled.input`
     width: 100%;
     padding: 16px;
@@ -71,7 +69,6 @@ export const Input = styled.input`
         font-size: 16px;
     }
 `;
-
 export const Background = styled.div`
     flex: 1;
     background: url(${backgroundImage}) no-repeat center center;

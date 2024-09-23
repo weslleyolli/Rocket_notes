@@ -51,7 +51,6 @@ export function Profile() {
                     <FiArrowLeft />
                 </Link>
             </header>
-
             <Form>
                 <Avatar>
                     <img 
@@ -94,7 +93,6 @@ export function Profile() {
                     icon={FiLock}
                     onChange={e => setPasswordNew(e.target.value)}
                 />
-
                 <Button title="Save" onClick={handleUpdate} />
             </Form>
         </Container>

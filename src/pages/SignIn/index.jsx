@@ -24,9 +24,7 @@ export function SignIn() {
             <Form>
                 <h1>Notes</h1>
                 <p>Application for save and manage your links</p>
-
                 <h2>Make your login</h2>
-
                 <Input
                     placeholder="Email"
                     type="text"
@@ -39,9 +37,7 @@ export function SignIn() {
                     icon={FiLock}
                     onChange={e => setPassword(e.target.value)}
                 />
-
                 <Button title="Enter" onClick={handleSignIn}/>
-
                 <Link to="/register">
                     Create account
                 </Link>

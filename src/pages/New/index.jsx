@@ -68,14 +68,12 @@ export function New() {
     return (
         <Container>
             <Header />
-
             <main>
                 <Form>
                     <header>
                         <h1>Create Note</h1>
                         <Link to="/">back</Link>
                     </header>
-
                     <Input 
                         placeholder="Title" 
                         onChange={e => setTitle(e.target.value)}
@@ -84,7 +82,6 @@ export function New() {
                         placeholder="Comments" 
                         onChange={e => setDescription(e.target.value)}
                     />
-
                     <Section title="Links">
                         {
                             links.map((link, index) => (
@@ -103,7 +100,6 @@ export function New() {
                             onClick={handleAddLinks}
                         />
                     </Section>
-
                     <Section title="markers">
                         <div className='tags'>
                             {
@@ -128,7 +124,6 @@ export function New() {
                     <Button 
                         title='Save' 
                         onClick={handleNewNote}
-                    
                     />
                 </Form>
             </main>

@@ -43,7 +43,7 @@ export const Brand = styled.div`
     }
 
     @media (max-width: 768px) {
-        display: none; // Esconde o brand no mobile para dar mais espaço ao conteúdo
+        display: none;
     }
 `;
 
@@ -58,7 +58,7 @@ export const Menu = styled.ul`
     }
 
     @media (max-width: 768px) {
-        display: none; // Esconde o menu no mobile para simplificar a interface
+        display: none;
     }
 `;
 
@@ -69,7 +69,7 @@ export const Search = styled.div`
     @media (max-width: 768px) {
         padding-left: 12px;
         padding-top: 12px;
-        padding-right: 12px; // Reduz o padding no mobile para um layout mais compacto
+        padding-right: 12px; 
     }
 `;
 
@@ -80,7 +80,7 @@ export const Content = styled.div`
 
     @media (max-width: 768px) {
         padding-left: 16px;
-        padding-right: 16px; // Reduz o padding lateral no mobile
+        padding-right: 16px;
     }
 `;
 
